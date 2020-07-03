@@ -17,6 +17,13 @@ server.get("/", function(req,res){
     res.render('courses', {courses : data.courses})
 })
 
+//Router params /:params
+server.get("/courses/:id", (req,res)=> {
+    const course = data.courses.find((course) => course.name === req.params.id)
+
+    return course ? res.render("description", {course}) : res.render("not-found")
+})
+
 server.get("/about", function(req,res){
     res.render('about', {company: data.about})
 })

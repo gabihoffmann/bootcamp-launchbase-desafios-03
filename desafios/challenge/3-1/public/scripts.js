@@ -1,6 +1,6 @@
-const modalOverlay = document.querySelector('.overlay');
-const modalView = document.querySelector('.modal');
-const cards = document.querySelectorAll('.card');
+const modalOverlay = document.querySelector('.overlay')
+const modalView = document.querySelector('.modal')
+const cards = document.querySelectorAll('.card')
 
 
 for(let card of cards){
@@ -18,17 +18,24 @@ for(let card of cards){
     })
 
     card.addEventListener('click', function(){
-        modalOverlay.classList.add('active')
-        modalOverlay.querySelector("iframe").src = `https://rocketseat.com.br/${cardId}`
+        window.location.href = `/courses/${cardId}`
+
+        // modalOverlay.classList.add('active')
+        // modalOverlay.querySelector("iframe").src = `https://rocketseat.com.br/${cardId}`
     })
 }
 
-document.querySelector('.modal__close').addEventListener('click', function(){
-    modalOverlay.classList.remove('active')
-    modalView.classList.remove('modal--maximmize')
-})
+// document.querySelector('.modal__close').addEventListener('click', function(){
+//     modalOverlay.classList.remove('active')
+//     modalView.classList.remove('modal--maximmize')
+// })
 
-document.querySelector('.modal__maximmize').addEventListener('click',function(){
-    modalView.classList.toggle('modal--maximmize')
-})
+// document.querySelector('.modal__maximmize').addEventListener('click',function(){
+//     modalView.classList.toggle('modal--maximmize')
+// })
 
+const description = document.querySelector(".description")
+const courseID = description.getAttribute('id')
+
+description.querySelector('.card__price').style.background = `var(--color-${courseID})`
+description.querySelector('.company__name').style.color = `var(--color-${courseID})`
