@@ -227,21 +227,24 @@ section.notfound{
 /* === PAGE CONTENTS ===*/
 .cards{
     margin: auto;
-    width: 99%;
+    width: 95%;
     max-width: 980px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     grid-gap: 20px;
 }
 
 .card{
     background-color:var(--color-fourth);
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+
+    height: auto;
 }
 
 .card__image{
@@ -260,6 +263,7 @@ section.notfound{
 }
 
 .card__description h1{
+    text-transform: uppercase;
     font-weight: 500;
     margin: 5px 0;
 }

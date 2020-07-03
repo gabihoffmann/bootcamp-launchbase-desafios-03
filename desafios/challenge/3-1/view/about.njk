@@ -13,29 +13,19 @@
 {% block content %}
          <section class="info">
             <div class="img-container">
-                <img src="https://rocketseat.com.br/static/images/logo-rocketseat.svg" alt="Rocketseat">
-                <h1 class="company__name">Rocketseat</h1>
+                <img src="{{company.logoUrl}}" alt="Rocketseat">
+                <h1 class="company__name">{{company.name}}</h1>
             </div>
             <div class="container">
                 <div class="company">
                     <div class="company__description">
-                        <h3>As melhores tecnologias em programação, direto ao ponto e do jeito certo.</h3>
-                        <p>No meio de tanta informação e da quantidade de ferramentas que surgem todos os dias, você precisa de
-                        alguém que te leve na direção certa.<p>
+                        <h3>{{company.description.title}}</h3>
+                        <p>{{company.description.text}}<p>
                     </div>
                     <ul class="company__technologies">
-                        <li><span class="material-icons">
-                            code
-                            </span>JavaScript</li>
-                        <li><span class="material-icons">
-                            next_week
-                            </span>Node.js</li>
-                        <li><span class="material-icons">
-                            settings_brightness
-                            </span>React.js</li>
-                        <li><span class="material-icons">
-                            mobile_screen_share
-                            </span>React Native</li>
+                        {% for tech in company.techs %}
+                            <li><span class="material-icons">{{tech.icon}}</span>{{tech.name}}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -43,26 +33,13 @@
         <div class="social-links">
             <nav class="contact-menu footer">
                 <ul>
-                    <li>
-                        <a href="https://rocketseat.com.br/" target="_blank">
-                            Rocketseat
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/rocketseat" target="_blank">
-                            GitHub
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://instagram.com/rocketseat_oficial" target="_blank">
-                            Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://fb.com/rocketseat" target="_blank">
-                            Facebook
-                        </a>
-                    </li>
+                    {% for link in company.links %}
+                         <li>
+                            <a href="{{link.url}}" target="_blank">
+                                {{link.name}}
+                            </a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </nav>
         </div>

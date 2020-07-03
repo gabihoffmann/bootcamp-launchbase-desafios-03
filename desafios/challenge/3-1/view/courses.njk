@@ -13,50 +13,22 @@
 {% block content %}
     <div class="wrapper">
             <div class="cards">
-                <!-- card starte -->
-                <div class="card" id="starter">
-                    <div class="card__image">
-                        <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="Starter">
+                {% for course in courses %}
+                    <div class="card" id="{{course.name}}">
+                        <div class="card__image">
+                            <img src="{{course.logoUrl}}" alt="Image logo {{course.name}}">
+                        </div>
+                        <div class="card__description">
+                            <h1 class="card__description--highlight">{{course.name}}</h1>
+                            <p>{{course.description}}</p> 
+                            
+                        </div>
+                        <div class="card__info">
+                            <p>{{course.modules}} módulos</p>
+                            <p class="card__price">{{course.price}}</p>
+                        </div>
                     </div>
-                    <div class="card__description">
-                        <h1 class="card__description--highlight">Starter</h1>
-                        <p>Torne-se um programador desejado no mercado com esses cursos gratuitos</p> 
-                        
-                    </div>
-                    <div class="card__info">
-                        <p>5 módulos</p>
-                        <p class="card__price">Free</p>
-                    </div>
-                </div>
-                <!-- card launchbase -->
-                <div class="card" id="launchbase">
-                    <div class="card__image">
-                        <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="Launchbase">
-                    </div>
-                    <div class="card__description">
-                        <h1 class="card__description--highlight">Launchbase</h1>
-                        <p>Domine programação do zero e tenha acesso às melhores oportunidades do mercado</p>
-                        
-                    </div>
-                    <div class="card__info">
-                        <p>8 módulos</p>
-                        <p class="card__price">Reserve your spot </p>
-                    </div>
-                </div>
-                <!-- card gostack -->
-                <div class="card" id="gostack">
-                    <div class="card__image">
-                        <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="GoStack">
-                    </div>
-                    <div class="card__description">
-                        <h1 class="card__description--highlight">GoStack</h1>
-                        <p>Treinamento imersivo nas tecnologias mais modernas de densenvolvimento web e mobile</p>
-                    </div>
-                    <div class="card__info">
-                        <p>8 módulos</p>
-                        <p class="card__price">Reserve your spot </p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
     </div>
 {% endblock %}

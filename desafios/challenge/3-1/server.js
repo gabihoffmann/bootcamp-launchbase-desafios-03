@@ -1,5 +1,6 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
+const data = require("./data/data")
 
 const server = express()
 
@@ -11,14 +12,13 @@ nunjucks.configure('view',{
     autoescape: false, //Permite o uso de html em variaveis njk
     noCache: true
 })
-
 /* Rotas */
 server.get("/", function(req,res){
-    res.render('courses')
+    res.render('courses', {courses : data.courses})
 })
 
 server.get("/about", function(req,res){
-    res.render('about')
+    res.render('about', {company: data.about})
 })
 
 server.use(function(req,res){
