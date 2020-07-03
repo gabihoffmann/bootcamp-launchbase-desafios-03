@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+:root{
+    --color-primary: #1D1D25;
+    --color-sencodary: #F5F4E9;
+    --color-third: #7159C1;
+    --color-fourth: #141319;
+
+    --color-starter: #7159C1;
+    --color-launchbase: #F18104;
+    --color-gostack: #00E868;
+}
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    /* a cada  1rem será 10px */
+    font-size: 62.5%;
+}
+
+html,
+body{
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+/* === GRID LAYOUT === */
+body{
+    display: grid;
+    grid-template-areas: "h" "m" "f";
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+
+    background:#28272F;
+    color: var(--color-sencodary);
+}
+header{
+    grid-area: h;
+}
+div.content{
+    grid-area: m;
+    padding: 40px 0;
+}
+footer{
+    grid-area: f;
+}
+
+/* === HEADER === */
+
+header,
+footer{
+    background-color: var(--color-primary);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding: 30px;
+    width: 100%;
+}
+
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: auto;
+}
+
+.container-logo img{
+    width: 150px;
+    margin-left: 20px;
+    padding: 15px 0;
+}
+
+.contact-menu ul{
+    list-style: none;
+    display: flex;
+}
+
+.contact-menu ul li a{
+    color: var(--color-sencodary);
+    font-size: 1.4rem;
+    line-height: 3.4rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    padding: 2.4rem;
+    transition: all 250ms linear 0s;
+}
+
+.contact-menu ul li a:hover{
+    background: rgba(255,255,255,0.15);
+}
+
+/* === FOOTER === */
+footer{
+    border: 0;
+    padding: 15px;
+}
+
+footer .container{
+    color: var(--color-sencodary);
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    font-weight: 300;
+    text-align: center;
+    max-width: 980px;
+    margin: auto;
+}
+
+footer .container a{
+    color: var(--color-sencodary);
+    font-weight: 200;
+    border-bottom: 0.05rem solid var(--color-third);
+    transition: all 250ms linear 0s;
+}
+
+footer .container a:hover{
+    background-color: rgba(113, 89, 193,0.5);
+    border-radius: 1.5rem;
+    padding: .7rem;
+}
+
+/* === ABOUT ROCKEAT === */
+
+section.info{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 980px;
+    margin: auto;
+}
+
+section .img-container{
+    order: 1;
+    align-self: flex-start;
+}
+
+.img-container img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1.2px solid var(--color-sencodary);
+    background-color: var(--color-third);
+}
+
+.company__name{
+    color: var(--color-third);
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 4.2rem;
+    line-height: 4.8rem;
+}
+
+section .container{
+    margin-right: 25px;
+}
+.company__description{
+    margin: 10px 5px 0px;
+    font-family: "Source Sans Pro";
+}
+
+.company__description h3{
+    color: var(--color-sencodary);
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+    
+}
+.company__description p{
+    color: rgb(154, 142, 191);
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+}
+
+.company__technologies{
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.company__technologies li{
+    list-style: none;
+    padding: 1rem;
+}
+
+.company__technologies li span{
+    margin-right: 10px;
+    color: var(--color-third);
+}
+
+.social-links{
+    margin: 60px 0;
+    /* border:1px solid red; */
+}
+.social-links nav ul{ 
+    margin: 0 auto;
+    max-width: 800px;
+    justify-content: space-between;
+}
+.social-links nav ul li a{
+    color: var(--color-third);
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-bottom: 0.5px solid var(--color-third);
+}
+
+/* === PAGE NOT FOUND === */
+section.notfound{
+    text-align: center;
+}
+
+.notfound img{
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+}
+
+/* === PAGE CONTENTS ===*/
+.cards{
+    margin: auto;
+    width: 99%;
+    max-width: 980px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.card{
+    background-color:var(--color-fourth);
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__image{
+    width: 100%;
+    text-align: center;
+}
+
+.card__image img{
+    height: 100%;
+}
+
+.card__description{
+    padding: 10px;
+    color: var(--color-sencodary);
+    text-align: center;
+}
+
+.card__description h1{
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.card__info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    color: var(--color-sencodary);
+    padding-left: 10px;
+}
+
+.card__price{
+    background: var(--color-third);
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px 20px;
+}
+
+/* === MODAL === */
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+
+    z-index: 5;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal{
+    background: white;
+    width: 60%;
+    height: 60%;
+    margin: 10vh auto;
+    position: relative;
+} 
+
+/* === MODAL ACTIVE === */
+.modal__controls{
+    position: relative;
+    top: 8px;
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal__controls a{
+    margin: 5px;
+}
+
+.modal__close,.modal__maximmize{
+    cursor: pointer;
+    color: black;
+}
+
+/*=== IFRAME ===*/
+.modal__content{
+    margin-top: 5px;
+    padding-left: 5px;
+}
+.modal__content iframe{
+    width: 99%;
+    height: 90%;
+    position: absolute;
+}
+
+.modal.modal--maximmize{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.modal.modal--maximmize iframe{
+    width: 100%;
+    height: 94%
+}

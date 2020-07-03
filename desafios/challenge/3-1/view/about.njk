@@ -1,0 +1,71 @@
+{% extends "layout.njk"%}
+
+{% block head%}
+    <title>About Rocketseat</title>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+{% endblock %}
+
+{% block headermenu %}
+    <li><a href="/">Home</a></li>
+{% endblock %}
+
+{% block content %}
+         <section class="info">
+            <div class="img-container">
+                <img src="https://rocketseat.com.br/static/images/logo-rocketseat.svg" alt="Rocketseat">
+                <h1 class="company__name">Rocketseat</h1>
+            </div>
+            <div class="container">
+                <div class="company">
+                    <div class="company__description">
+                        <h3>As melhores tecnologias em programação, direto ao ponto e do jeito certo.</h3>
+                        <p>No meio de tanta informação e da quantidade de ferramentas que surgem todos os dias, você precisa de
+                        alguém que te leve na direção certa.<p>
+                    </div>
+                    <ul class="company__technologies">
+                        <li><span class="material-icons">
+                            code
+                            </span>JavaScript</li>
+                        <li><span class="material-icons">
+                            next_week
+                            </span>Node.js</li>
+                        <li><span class="material-icons">
+                            settings_brightness
+                            </span>React.js</li>
+                        <li><span class="material-icons">
+                            mobile_screen_share
+                            </span>React Native</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="social-links">
+            <nav class="contact-menu footer">
+                <ul>
+                    <li>
+                        <a href="https://rocketseat.com.br/" target="_blank">
+                            Rocketseat
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/rocketseat" target="_blank">
+                            GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://instagram.com/rocketseat_oficial" target="_blank">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://fb.com/rocketseat" target="_blank">
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+{% endblock %}
+ 
+        
