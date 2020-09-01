@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block head %}{% endblock %}
+        <link rel="icon" href="/image/favicon.ico">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="container-logo">
+                    <a href="/">
+                        <img src="https://rocketseat.com.br/static/images/gostack/logo-rocketseat.svg" alt="rocketseat">
+                    </a>
+                </div>
+                <nav class="contact-menu">
+                    <ul>
+                        <li>
+                            <a href="https://discordapp.com/invite/gCRAFhc" target="_blank">Community</a>
+                        </li>
+                        <li>
+                            <a href="mailto:oi@rocketseat.com.br">Email</a>
+                        </li>
+                        <li>
+                            <a href="tel:+5547992078767">Phone</a>
+                        </li>
+                        {% block headermenu %}{% endblock %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="content">
+            {% block content %}{% endblock content %}
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p class="footer__author">Feito com 🧡 por
+                    <a href="http://www.github.com/gabihoffmann" target="_blank">
+                        Gabi Hoffmann</a>, @Launchbase
+                    <a href="http://rocketseat.com.br/" target="_blank">
+                        Rocketseat
+                    </a>🚀!
+                </p>
+            </div>
+        </footer>
+
+        {# {% block modal %}
+    {% endblock modal %} #}
+
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
